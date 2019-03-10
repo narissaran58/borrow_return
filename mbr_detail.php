@@ -59,7 +59,7 @@ require('mbr_select.php');
         </div>
         <?php require("borrow_form.php"); ?><br>
         <?php require("borrow_list.php"); ?><br>
-        <?php require("fine_list.php"); ?>
+        <!-- <?php require("fine_list.php"); ?> -->
     </div>
 
 </body>

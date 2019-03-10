@@ -1,14 +1,14 @@
 <?php
 require('mysql/config.php');
 
-if(isset($_POST['mid'])){
-    $mid=$_POST['mid'];
+if(isset($_GET['mid'])){
+    $mid=$_GET['mid'];
 }else{
     $mid="";
 }
 
-if(isset($_POST['bid'])){
-     $bid=$_POST['bid'];
+if(isset($_GET['bid'])){
+     $bid=$_GET['bid'];
 }else{
    
     $bid="";

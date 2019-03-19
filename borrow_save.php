@@ -1,6 +1,6 @@
 <?php
 require('mysql/config.php');
-
+$sql="SELECT mid,mname,mdep FROM members ";
 // รับค่ามาโพสถ้าไม่มีถือว่าว่าง
 if(isset($_POST['mid'])){
     $mid=$_POST['mid'];
@@ -70,11 +70,14 @@ if($borrowrow<1){
 </head>
 <body>
 
+                      
+
+                  
 <script language="javascript">
 var v1=<?php echo($v1);?>;
 alert('<?php echo($msg);?>');
 if(v1==1){
-    window.location.replace("mbr_detail.php");
+    window.location.replace("mbr_detail.php?mid=<?php echo($mid);?>");
 }else{
     window.history.back();
 }
@@ -83,3 +86,8 @@ if(v1==1){
 </body>
 
 </html
+
+
+
+
+

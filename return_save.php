@@ -51,7 +51,7 @@ rstbook
 var v1=<?php echo($v1);?>;
 alert('<?php echo($msg);?>');
 if(v1==1){
-    window.location.replace("mbr_detail.php");
+    window.location.replace("mbr_detail.php?mid=<?php echo($mid);?>");
 }else{
     window.history.back();
 }

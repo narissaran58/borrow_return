@@ -30,8 +30,15 @@ require('mysql/connect.php');
             <input class="form-control mr-sm-2" type="text" name="keyword" id="keyword" value="<?php echo($keyword);?>"
                 placeholder="ค้นหา" aria-label="Search">
             <button class="btn btn-outline-success my-2 my-sm-0" type="submit">ค้นหารายชื่อ</button>
+            <div class="col">
+            <div class="float-right">
+            <button class="btn btn-outline-success my-2 my-sm-0 float-right" type="submit">เพิ่มรายชื่อ</button>
+            </div>
+            </div>
             <!-- <input class="btn btn-outline-success my-2 my-sm-0" name="submit" type="submit" value="ค้นหารายชื่อ"> -->
         </form>
+
+        
         <div class="card">
             <div class="card-header">
                 รายชื่อจ้า

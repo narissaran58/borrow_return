@@ -1,12 +1,12 @@
 <?php
-session_start();
+
 require("mysql/config.php");
 
 // $sql   = "SELECT * from members as m inner join position as p on m.posid = p.posid inner join work as w on m.workid = w.workid inner join division as d on m.divisid = d.division inner join department as dp on m.depid = dp.depid";
 
 // SELECT members.mid,members.mname,position.posname,members.mphone FROM members JOIN position on position.posid=members.posid";
 
-$userid = $_SESSION['userid'];
+// $userid = $_SESSION['userid'];
 
 // SELECT mid,mname,posid,workid,divisid,depid,mphone FROM members 
 
@@ -16,6 +16,8 @@ $userid = $_SESSION['userid'];
 // $sql="SELECT mid,mname,position.* , mphone 
 // FROM members,position WHERE members.posid = position.posid";
 
+// echo $sql; เอาไว้เช็คคำสั่งsql;
+
 $sql="SELECT mid,mname,posi,work,divis,dep,mphone FROM members "; //เพิ่มตรงนี้
 if(isset($_GET['keyword'])){
     $keyword=$_GET['keyword'];
@@ -24,6 +26,7 @@ if(isset($_GET['keyword'])){
 }else{
     $keyword="";
     $sql.="WHERE mid IS NULL";
+    
 }
 require('mysql/connect.php');
 require('header.php');
@@ -37,6 +40,7 @@ require('header.php');
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
 </head>
 
 <body>
@@ -70,7 +74,10 @@ require('header.php');
                         <td scope="col">กอง</td>
                         <td scope="col">ฝ่าย</td>
                         <td scope="col">เบอร์ติดต่อ</td>
+                        <td scope="col"></td>
+                        <td scope="col"></td>
                         <?php while($record=mysqli_fetch_array($result)){?>
+
                     <tr>
                         <td><a href="mbr_detail.php?mid=<?php echo($record[0]);?>"><?php echo($record[0]);?></a></td>
                         <td><?php echo($record[1]);?></td>
@@ -79,6 +86,9 @@ require('header.php');
                         <td><?php echo($record[4]);?></td>
                         <td><?php echo($record[5]);?></td>
                         <td><?php echo($record[6]);?></td>
+                        <td><a href="mbr_edit.php?edit=<?php echo($record[0]); ?>" class="btn btn-warning">Edit</a>
+                            <a href="mbr_list.php?delete=<?php echo($record[0]); ?>" class="btn btn-danger">Delete</a>
+                        </td>
                     </tr>
                     <?php }
 require('mysql/unconn.php');

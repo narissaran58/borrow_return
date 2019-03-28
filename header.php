@@ -1,3 +1,6 @@
+<?php
+require('lock.php');
+?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,7 +31,7 @@ http://www.templatemo.com/preview/templatemo_415_dashboard
   </div>
   <div class="col">
    <div class="float-right">
-     <a href="login_admin.php" class="btn btn-outline-light">ออกจากระบบ</button></a>
+     <a href="logout.php" class="btn btn-outline-light">ออกจากระบบ</button></a>
    </div>
   </div>
  </div>

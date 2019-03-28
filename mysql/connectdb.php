@@ -8,7 +8,7 @@ $username = 'root';
 
 $password = '';
 
-$dbname = 'book';
+$dbname = 'borrowplus';
 
 // Create connection
 

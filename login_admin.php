@@ -1,6 +1,6 @@
 <?php
 session_start();
-require("mysql/config.php");
+// require("mysql/config.php");
 require('mysql/connectdb.php');
 
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
@@ -10,11 +10,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $password = $_POST['password'];
     $hashedPassword = md5($password);
 
-	$sql = "SELECT * from login_admin where username = '$username'";
-	$query = $conn->query($sql);
-	$row = $query->fetch_assoc();
-	$expectedPassword = $row['password'];
-
+    $sql = "select password from user where username = '$username'";
+    $query = $conn->query($sql);
+    $row = $query->fetch_assoc();
+    $expectedPassword = $row['password'];
+    
     //$expectedPassword = md5('goodcoffee'); // TODO: get from database
 
     if ($hashedPassword == $expectedPassword) {
@@ -22,7 +22,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $_SESSION['loggedin'] = true;
 				$_SESSION['userid'] = $row['userid'];
         // Redirect
-        header('Location: mbr_list.php');
+        header('Location: lock_admin.php');
         exit();
     }
 

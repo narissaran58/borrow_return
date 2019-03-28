@@ -65,7 +65,7 @@ require('header.php');
                             <td><?php echo($mphone);?></td>
                         </tr>
                         <tr>
-                            <td><a href="mbr_list.php" class="btn btn-outline-primary my-0 my-sm-2"><i class="fa fa-chevron-circle-left"> กลับ </i></td>
+                            <td><a href="mbr_list.php?keyword=" class="btn btn-outline-primary my-0 my-sm-2"><i class="fa fa-chevron-circle-left"> กลับ </i></td>
                             <td></td>
                         </tr>
                     </tbody>

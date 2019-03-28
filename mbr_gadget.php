@@ -44,7 +44,7 @@ require('header.php');
 <br>
 <center>
   &nbsp&nbsp&nbsp<input class="btn btn-outline-primary" type="submit" value="ยืนยัน">&nbsp&nbsp
-  <a href="mbr_list.php"class="btn btn-outline-danger">ยกเลิก</a>
+  <a href="mbr_list.php?keyword="class="btn btn-outline-danger">ยกเลิก</a>
 </center>
 </form>
             </div>

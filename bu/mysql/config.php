@@ -2,6 +2,6 @@
 $dbuser="root";
 $dbpass="";
 $dbhost="localhost";
-$dbname="book";
+$dbname="borrow_return";
 
 ?>

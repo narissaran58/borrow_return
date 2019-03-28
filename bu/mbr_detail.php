@@ -1,8 +1,8 @@
 <?php
+
 require("mysql/config.php");
 $mid=$_GET['mid'];
 require('mbr_select.php');
-require('header.php');
 ?>
 
 <html>
@@ -12,20 +12,23 @@ require('header.php');
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+    <title>ระบบยืมพัสดุ</title>
 </head>
 
 <body>
     <div class="container">
-      <br>
         <div class="card">
+            <div class="card-header">
+                ระบบจ้า
+            </div>
             <div class="card-body">
                 <table class="table">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">รายละเอียดสมาชิก</th>
                             <th scope="col"></th>
-
+                            
                         </tr>
                     </thead>
                     <tbody>
@@ -41,32 +44,13 @@ require('header.php');
                         </tr>
                         <tr>
 
-                            <td>ตำแหน่ง</td>
-                            <td><?php echo($posi);?></td>
+                            <td>แผนก</td>
+                            <td><?php echo($mdep);?></td>
                         </tr>
                         <tr>
-
-                            <td>งาน</td>
-                            <td><?php echo($work);?></td>
-                        </tr>
-                        <tr>
-
-                            <td>กอง</td>
-                            <td><?php echo($divis);?></td>
-                        </tr>
-                        <tr>
-
-                            <td>ฝ่าย</td>
-                            <td><?php echo($dep);?></td>
-                        </tr>
-                        <tr>
-
-                            <td>เบอร์ติดต่อ</td>
-                            <td><?php echo($mphone);?></td>
-                        </tr>
-                        <tr>
-                            <td><a href="mbr_list.php" class="btn btn-outline-primary my-0 my-sm-2"><i class="fa fa-chevron-circle-left"> กลับ </i></td>
+                            <td><a href="mbr_list.php">กลับ</td>
                             <td></td>
+
                         </tr>
                     </tbody>
                 </table>
@@ -75,6 +59,7 @@ require('header.php');
         </div>
         <?php require("borrow_form.php"); ?><br>
         <?php require("borrow_list.php"); ?><br>
+        
     </div>
 
 </body>
@@ -89,3 +74,4 @@ require('header.php');
 </script>
 
 </html>
+

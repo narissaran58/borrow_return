@@ -1,6 +1,6 @@
 <?php
 require('mysql/config.php');
-
+$sql="SELECT mid,mname,mdep FROM members ";
 // รับค่ามาโพสถ้าไม่มีถือว่าว่าง
 if(isset($_POST['mid'])){
     $mid=$_POST['mid'];
@@ -11,7 +11,7 @@ if(isset($_POST['mid'])){
 if(isset($_POST['bid'])){
      $bid=$_POST['bid'];
 }else{
-
+   
     $bid="";
 }
 
@@ -38,7 +38,7 @@ if($borrowrow<1){
     $msg="รหัสไม่ถูกต้อง";
     $v1=0;
 }elseif($lending>0){
-    $msg="สมาชิกยืมพัสดุอยู่แล้ว";
+    $msg="มีสมาชิกยืมอยู่แล้ว";
     $v1=0;
 
 }else{
@@ -62,6 +62,9 @@ if($borrowrow<1){
 </head>
 <body>
 
+                      
+
+                  
 <script language="javascript">
 var v1=<?php echo($v1);?>;
 alert('<?php echo($msg);?>');
@@ -75,3 +78,8 @@ if(v1==1){
 </body>
 
 </html
+
+
+
+
+

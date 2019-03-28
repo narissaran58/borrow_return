@@ -10,7 +10,7 @@ if(isset($_GET['mid'])){
 if(isset($_GET['bid'])){
      $bid=$_GET['bid'];
 }else{
-
+   
     $bid="";
 }
 
@@ -20,7 +20,7 @@ $record=mysqli_fetch_array($result);
 $namday=(int)$record[0];
 require('mysql/unconn.php');
 
-if($namday>7){
+if($namday>365){
     $tstatus=2;
 }else{
     $tstatus=0;
@@ -51,7 +51,7 @@ require('mysql/unconn.php');
 var v1=<?php echo($v1);?>;
 alert('<?php echo($msg);?>');
 if(v1==1){
-    window.location.replace("mbr_detail.php?mid=<?php echo($mid)?>");
+    window.location.replace("mbr_detail.php?mid=<?php echo($mid);?>");
 }else{
     window.history.back();
 }

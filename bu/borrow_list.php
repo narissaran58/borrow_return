@@ -15,7 +15,7 @@
     <div class="container">
         <div class="card">
             <div class="card-header">
-                พัสดุที่ถูกยืม
+                ถือพัสดุอะไรอยู่บ้าง
             </div>
             <div class="card-body">
                 <table class="table">
@@ -24,23 +24,23 @@
                             <td>เลขพัสดุ</td>
                             <td>ของที่ยืม</td>
                             <td>วันที่ยืม</td>
-                            <td>วันสิ้นสุดการยืม</td>
+                            <td>วันที่คืน</td>
                             <td></td>
                         </tr>
 
                         <?php
 $sql="SELECT borrow.bid, borrow.btitle, transactions.tborrow,
- DATE_ADD(transactions.tborrow, INTERVAL 7 DAY) AS deadline
-FROM borrow,transactions
+ DATE_ADD(transactions.tborrow, INTERVAL 7 DAY) AS deadline 
+FROM borrow,transactions 
 WHERE borrow.bid=transactions.bid
 AND transactions.mid='$mid'
 AND transactions.tstatus='1'";
 // echo($sql);
-require("mysql/config.php");
+
 require('mysql/connect.php');
 while ($record=mysqli_fetch_array($result)){
 
-
+    
 ?>
                     </thead>
                     <tbody>
@@ -51,8 +51,8 @@ while ($record=mysqli_fetch_array($result)){
                             <td><?php echo date_format(date_create($record[3]),"d/m/Y"); ?></td>
                             <td><a href="javascript:returnborrow('<?php echo($record[0]); ?>')">คืนพัสดุ</a></td>
                         </tr>
-                        <?php
-}
+                        <?php 
+} 
 require('mysql/unconn.php');
 ?>
                     </tbody>
